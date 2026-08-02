@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>fluxoteca — Produtos digitais para organizar sua rotina</title>
+  <meta name="description" content="fluxoteca: produtos digitais, templates e automações para você organizar sua rotina e ganhar produtividade." />
+
+  <!-- Ícone da aba do navegador (favicon) — mascote beija-flor da fluxoteca -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="128x128" href="assets/img/favicon-128.png" />
+  <link rel="apple-touch-icon" href="assets/img/favicon-128.png" />
+
+  <!-- Fonte Inter via Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Folha de estilos própria -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ==================================================================
+       1. HEADER / NAVEGAÇÃO
+       Cabeçalho fixo com logo, menu de âncoras e CTA principal.
+  =================================================================== -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+
+      <!-- Logo estilizado: mascote beija-flor + nome da marca -->
+      <a href="#hero" class="logo" aria-label="fluxoteca - página inicial">
+        <span class="logo__icon" aria-hidden="true">
+          <img src="assets/img/beijaflor-logo.png" alt="" width="40" height="31" class="logo__bird" />
+        </span>
+        <span class="logo__text">fluxoteca</span>
+      </a>
+
+      <!-- Menu de navegação principal (desktop) -->
+      <nav class="nav" id="nav">
+        <ul class="nav__list">
+          <li><a href="#hero" class="nav__link">Início</a></li>
+          <li><a href="#recursos" class="nav__link">Recursos</a></li>
+          <li><a href="#solucoes" class="nav__link">Soluções</a></li>
+          <li><a href="#telas" class="nav__link">Aplicativo</a></li>
+          <li><a href="#depoimentos" class="nav__link">Depoimentos</a></li>
+          <li><a href="#blog" class="nav__link">Blog</a></li>
+          <li><a href="#contato" class="nav__link">Contato</a></li>
+        </ul>
+      </nav>
+
+      <!-- CTA de destaque no cabeçalho (some no mobile) -->
+      <a href="#contato" class="btn btn--primary header__cta">Comece agora</a>
+
+      <!-- Botão hamburguer, visível apenas no mobile -->
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ==================================================================
+         2. HERO SECTION (DESTAQUE PRINCIPAL)
+    =================================================================== -->
+    <section class="hero" id="hero">
+      <div class="container hero__inner">
+
+        <div class="hero__content" data-animate>
+          <span class="eyebrow">Produtos digitais para produtividade</span>
+          <h1 class="hero__title">
+            Organize sua rotina e transforme produtividade em resultado.
+          </h1>
+          <p class="hero__subtitle">
+            A fluxoteca reúne templates, automações e um aplicativo completo para
+            você planejar, executar e acompanhar tudo em um só lugar — sem
+            complicação e sem planilhas soltas.
+          </p>
+          <div class="hero__actions">
+            <a href="#contato" class="btn btn--primary btn--lg">Quero começar agora</a>
+            <a href="#recursos" class="btn btn--ghost btn--lg">Ver recursos</a>
+          </div>
+
+          <!-- Prova social rápida -->
+          <div class="hero__proof">
+            <div class="hero__avatars" aria-hidden="true">
+              <span class="avatar-dot"></span>
+              <span class="avatar-dot"></span>
+              <span class="avatar-dot"></span>
+            </div>
+            <p><strong>+2.400 pessoas</strong> já organizaram sua rotina com a fluxoteca</p>
+          </div>
+        </div>
+
+        <!-- Container estruturado para imagem personalizada do produto -->
+        <div class="hero__media" data-animate>
+          <div class="hero__image-frame">
+            <img
+              src="assets/img/imagem-produto-hero.jpg"
+              alt="Mulher sorridente usando o aplicativo fluxoteca no celular, com dashboard mostrando tarefas do dia e relatórios"
+              class="hero__image"
+              width="1600"
+              height="893"
+              loading="eager"
+            />
+          </div>
+          <!-- Elemento decorativo flutuante, apenas visual -->
+          <div class="hero__badge">
+            <strong>+38%</strong>
+            <span>de produtividade</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         3. SEÇÃO DE PILARES / RECURSOS (3 CARDS)
+    =================================================================== -->
+    <section class="section pillars" id="recursos">
+      <div class="container">
+        <div class="section__header" data-animate>
+          <span class="eyebrow">Por que a fluxoteca</span>
+          <h2 class="section__title">Três pilares que sustentam sua produtividade</h2>
+          <p class="section__subtitle">Tudo pensado para reduzir fricção no seu dia a dia.</p>
+        </div>
+
+        <div class="grid grid--3 pillars__grid">
+
+          <!-- Card 1 -->
+          <article class="card pillar-card" data-animate>
+            <span class="pillar-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <h3 class="card__title">Automação inteligente</h3>
+            <p class="card__text">Fluxos prontos que eliminam tarefas repetitivas e liberam tempo para o que realmente importa.</p>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="card pillar-card" data-animate>
+            <span class="pillar-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="3" y="4" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.6"/>
+                <rect x="14" y="4" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.6"/>
+                <rect x="3" y="13" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.6"/>
+                <rect x="14" y="13" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.6"/>
+              </svg>
+            </span>
+            <h3 class="card__title">Templates prontos</h3>
+            <p class="card__text">Modelos testados para planejamento, finanças e gestão de projetos, prontos para usar hoje.</p>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="card pillar-card" data-animate>
+            <span class="pillar-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.6 4.5 6.2 4c2-.3 3.8.6 5.1 2.2a1 1 0 0 0 1.4 0C14 4.6 15.8 3.7 17.8 4c3.6.5 5.5 4.2 3.7 8-2.5 4.5-9.5 9-9.5 9Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <h3 class="card__title">Suporte dedicado</h3>
+            <p class="card__text">Time humano pronto para te ajudar a configurar e tirar o máximo proveito dos produtos.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         4. SEÇÃO DE PROPOSTA DE VALOR & MOCKUP
+    =================================================================== -->
+    <section class="section value-prop">
+      <div class="container value-prop__inner">
+
+        <!-- Mockup estilizado de aplicativo móvel -->
+        <div class="value-prop__media" data-animate>
+          <div class="phone-mockup">
+            <div class="phone-mockup__notch"></div>
+            <div class="image-placeholder image-placeholder--phone" data-label="Print do app">
+              <svg class="image-placeholder__icon" viewBox="0 0 24 24" width="30" height="30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                <path d="m3 15 5-4 4 3 4-5 5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span>mockup-app-avancado.png</span>
+            </div>
+          </div>
+          <div class="value-prop__blob" aria-hidden="true"></div>
+        </div>
+
+        <!-- Texto com recursos avançados -->
+        <div class="value-prop__content" data-animate>
+          <span class="eyebrow">Recursos avançados</span>
+          <h2 class="section__title">Sua rotina inteira, sincronizada em um só app</h2>
+          <p class="section__subtitle">
+            Acompanhe metas, tarefas e finanças em tempo real, com relatórios visuais
+            que mostram exatamente onde seu tempo e dinheiro estão sendo investidos.
+          </p>
+
+          <ul class="check-list">
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Sincronização automática entre dispositivos
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Relatórios e dashboards visuais em tempo real
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Lembretes inteligentes que se ajustam à sua rotina
+            </li>
+          </ul>
+
+          <a href="#contato" class="btn btn--primary">Conhecer o aplicativo</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         5. SEÇÃO DE SERVIÇOS PERSONALIZADOS (GRID 4 CARDS)
+    =================================================================== -->
+    <section class="section services" id="solucoes">
+      <div class="container">
+        <div class="section__header" data-animate>
+          <span class="eyebrow">Soluções sob medida</span>
+          <h2 class="section__title">Serviços personalizados para curto e longo prazo</h2>
+          <p class="section__subtitle">Escolha o formato que melhor se encaixa no momento do seu projeto.</p>
+        </div>
+
+        <div class="grid grid--4 services__grid">
+
+          <article class="card service-card" data-animate>
+            <span class="service-card__tag">Curto prazo</span>
+            <h3 class="card__title">Diagnóstico rápido</h3>
+            <p class="card__text">Análise da sua rotina atual e plano de ação em até 5 dias úteis.</p>
+          </article>
+
+          <article class="card service-card" data-animate>
+            <span class="service-card__tag">Curto prazo</span>
+            <h3 class="card__title">Setup guiado</h3>
+            <p class="card__text">Implantação assistida dos templates e automações essenciais.</p>
+          </article>
+
+          <article class="card service-card" data-animate>
+            <span class="service-card__tag">Longo prazo</span>
+            <h3 class="card__title">Acompanhamento mensal</h3>
+            <p class="card__text">Revisões periódicas para ajustar fluxos conforme sua rotina evolui.</p>
+          </article>
+
+          <article class="card service-card" data-animate>
+            <span class="service-card__tag">Longo prazo</span>
+            <h3 class="card__title">Consultoria dedicada</h3>
+            <p class="card__text">Parceria contínua para times que precisam de suporte estratégico.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         6. SEÇÃO DE DEMONSTRAÇÃO DE TELAS (APP SHOWCASE)
+    =================================================================== -->
+    <section class="section showcase" id="telas">
+      <div class="container">
+        <div class="section__header" data-animate>
+          <span class="eyebrow">Conheça o app</span>
+          <h2 class="section__title">Telas pensadas para simplicidade</h2>
+          <p class="section__subtitle">Arraste para o lado e veja o aplicativo por dentro.</p>
+        </div>
+      </div>
+
+      <!-- Faixa horizontal com scroll (carrossel simples) -->
+      <div class="showcase__wrapper">
+        <button class="showcase__arrow showcase__arrow--prev" id="showcasePrev" aria-label="Tela anterior">‹</button>
+
+        <div class="showcase__track" id="showcaseTrack">
+          <div class="image-placeholder image-placeholder--screen" data-label="Tela 01 — Início"><span>tela-01-inicio.png</span></div>
+          <div class="image-placeholder image-placeholder--screen" data-label="Tela 02 — Tarefas"><span>tela-02-tarefas.png</span></div>
+          <div class="image-placeholder image-placeholder--screen" data-label="Tela 03 — Finanças"><span>tela-03-financas.png</span></div>
+          <div class="image-placeholder image-placeholder--screen" data-label="Tela 04 — Relatórios"><span>tela-04-relatorios.png</span></div>
+          <div class="image-placeholder image-placeholder--screen" data-label="Tela 05 — Perfil"><span>tela-05-perfil.png</span></div>
+        </div>
+
+        <button class="showcase__arrow showcase__arrow--next" id="showcaseNext" aria-label="Próxima tela">›</button>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         7. SEÇÃO DE ATUALIZAÇÕES E MELHORIAS (GRID 4 ITENS)
+    =================================================================== -->
+    <section class="section updates">
+      <div class="container">
+        <div class="section__header" data-animate>
+          <span class="eyebrow">Evolução contínua</span>
+          <h2 class="section__title">Sempre melhorando, com você no controle</h2>
+        </div>
+
+        <div class="grid grid--4 updates__grid">
+
+          <div class="update-item" data-animate>
+            <span class="update-item__index">01</span>
+            <h3 class="card__title">Ouvimos o usuário</h3>
+            <p class="card__text">Cada atualização nasce de feedback real de quem usa todos os dias.</p>
+          </div>
+
+          <div class="update-item" data-animate>
+            <span class="update-item__index">02</span>
+            <h3 class="card__title">Testamos em produção</h3>
+            <p class="card__text">Novos recursos passam por testes controlados antes do lançamento geral.</p>
+          </div>
+
+          <div class="update-item" data-animate>
+            <span class="update-item__index">03</span>
+            <h3 class="card__title">Lançamos com clareza</h3>
+            <p class="card__text">Notas de versão simples, sem jargão técnico desnecessário.</p>
+          </div>
+
+          <div class="update-item" data-animate>
+            <span class="update-item__index">04</span>
+            <h3 class="card__title">Medimos o impacto</h3>
+            <p class="card__text">Acompanhamos métricas reais de produtividade após cada melhoria.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         8. SEÇÃO DE DEPOIMENTOS / AVALIAÇÕES
+    =================================================================== -->
+    <section class="section testimonials" id="depoimentos">
+      <div class="container">
+        <div class="section__header" data-animate>
+          <span class="eyebrow">Depoimentos</span>
+          <h2 class="section__title">Quem usa, recomenda</h2>
+        </div>
+
+        <div class="grid grid--3 testimonials__grid">
+
+          <blockquote class="testimonial-card" data-animate>
+            <p class="testimonial-card__text">"A fluxoteca organizou minha semana de um jeito que eu não conseguia sozinha. Recomendo demais."</p>
+            <footer class="testimonial-card__footer">
+              <span class="avatar-dot avatar-dot--lg" aria-hidden="true"></span>
+              <div>
+                <cite class="testimonial-card__name">Marina Souza</cite>
+                <span class="testimonial-card__role">Gestora de Projetos</span>
+              </div>
+            </footer>
+          </blockquote>
+
+          <blockquote class="testimonial-card" data-animate>
+            <p class="testimonial-card__text">"Os templates prontos economizaram semanas de trabalho da nossa equipe."</p>
+            <footer class="testimonial-card__footer">
+              <span class="avatar-dot avatar-dot--lg" aria-hidden="true"></span>
+              <div>
+                <cite class="testimonial-card__name">Rafael Lima</cite>
+                <span class="testimonial-card__role">Fundador de Startup</span>
+              </div>
+            </footer>
+          </blockquote>
+
+          <blockquote class="testimonial-card" data-animate>
+            <p class="testimonial-card__text">"Suporte rápido e atencioso. Sinto que tenho um time inteiro me ajudando."</p>
+            <footer class="testimonial-card__footer">
+              <span class="avatar-dot avatar-dot--lg" aria-hidden="true"></span>
+              <div>
+                <cite class="testimonial-card__name">Camila Rocha</cite>
+                <span class="testimonial-card__role">Coordenadora Administrativa</span>
+              </div>
+            </footer>
+          </blockquote>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         9. SEÇÃO DE ÚLTIMOS ARTIGOS / BLOG
+    =================================================================== -->
+    <section class="section blog" id="blog">
+      <div class="container">
+        <div class="section__header" data-animate>
+          <span class="eyebrow">Blog</span>
+          <h2 class="section__title">Últimos artigos</h2>
+          <p class="section__subtitle">Conteúdo prático sobre produtividade e organização.</p>
+        </div>
+
+        <div class="grid grid--3 blog__grid">
+
+          <article class="blog-card" data-animate>
+            <div class="image-placeholder image-placeholder--blog" data-label="Capa do artigo 1"><span>post-01-capa.png</span></div>
+            <div class="blog-card__body">
+              <span class="blog-card__date">12 jul. 2026</span>
+              <h3 class="card__title">5 formas de organizar sua semana em 15 minutos</h3>
+              <a href="#" class="link-arrow">Ler artigo →</a>
+            </div>
+          </article>
+
+          <article class="blog-card" data-animate>
+            <div class="image-placeholder image-placeholder--blog" data-label="Capa do artigo 2"><span>post-02-capa.png</span></div>
+            <div class="blog-card__body">
+              <span class="blog-card__date">28 jun. 2026</span>
+              <h3 class="card__title">Como templates prontos aceleram sua rotina</h3>
+              <a href="#" class="link-arrow">Ler artigo →</a>
+            </div>
+          </article>
+
+          <article class="blog-card" data-animate>
+            <div class="image-placeholder image-placeholder--blog" data-label="Capa do artigo 3"><span>post-03-capa.png</span></div>
+            <div class="blog-card__body">
+              <span class="blog-card__date">05 jun. 2026</span>
+              <h3 class="card__title">O que ninguém te conta sobre automação pessoal</h3>
+              <a href="#" class="link-arrow">Ler artigo →</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         10. SEÇÃO DE CONTATO / FORMULÁRIO & IMAGEM
+    =================================================================== -->
+    <section class="section contact" id="contato">
+      <div class="container contact__inner">
+
+        <div class="contact__form-wrap" data-animate>
+          <span class="eyebrow">Fale com a gente</span>
+          <h2 class="section__title">Vamos organizar sua rotina?</h2>
+          <p class="section__subtitle">Preencha o formulário e nosso time retorna em até 1 dia útil.</p>
+
+          <!-- Formulário de captação de leads -->
+          <form class="contact-form" id="contactForm" novalidate>
+
+            <div class="form-field">
+              <label for="nome">Nome completo</label>
+              <input type="text" id="nome" name="nome" placeholder="Seu nome" required />
+            </div>
+
+            <div class="form-field">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="email" placeholder="voce@email.com" required />
+            </div>
+
+            <div class="form-field">
+              <label for="telefone">Telefone / WhatsApp</label>
+              <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" />
+            </div>
+
+            <div class="form-field">
+              <label for="mensagem">Mensagem</label>
+              <textarea id="mensagem" name="mensagem" rows="4" placeholder="Conte um pouco sobre sua necessidade" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn--primary btn--block">Enviar mensagem</button>
+
+            <!-- Mensagem de retorno do formulário, controlada via JavaScript -->
+            <p class="contact-form__feedback" id="formFeedback" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+
+        <!-- Imagem institucional ao lado do formulário -->
+        <div class="contact__media" data-animate>
+          <div class="image-placeholder image-placeholder--contact" data-label="Imagem institucional da equipe fluxoteca">
+            <span>imagem-institucional.png</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         11. SEÇÃO DE INTEGRAÇÕES
+    =================================================================== -->
+    <section class="section integrations">
+      <div class="container">
+        <p class="integrations__label" data-animate>Integra com as ferramentas que você já usa</p>
+        <div class="integrations__row" data-animate>
+          <span class="integration-logo">Google Agenda</span>
+          <span class="integration-logo">Notion</span>
+          <span class="integration-logo">Slack</span>
+          <span class="integration-logo">Trello</span>
+          <span class="integration-logo">Excel</span>
+          <span class="integration-logo">Zapier</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================================================================
+       12. FOOTER (RODAPÉ CORPORATIVO)
+  =================================================================== -->
+  <footer class="footer">
+    <div class="container footer__grid">
+
+      <!-- Coluna 1: informações da marca -->
+      <div class="footer__brand">
+        <a href="#hero" class="logo logo--footer" aria-label="fluxoteca - página inicial">
+          <span class="logo__icon" aria-hidden="true">
+            <img src="assets/img/beijaflor-logo.png" alt="" width="38" height="30" class="logo__bird" />
+          </span>
+          <span class="logo__text">fluxoteca</span>
+        </a>
+        <p class="footer__desc">Produtos digitais para você organizar sua rotina com clareza e leveza.</p>
+        <p class="footer__cnpj">fluxoteca produtos digitais · CNPJ 00.000.000/0001-00</p>
+      </div>
+
+      <!-- Coluna 2: links rápidos -->
+      <div class="footer__col">
+        <h4 class="footer__title">Links rápidos</h4>
+        <ul class="footer__list">
+          <li><a href="#hero">Início</a></li>
+          <li><a href="#recursos">Recursos</a></li>
+          <li><a href="#solucoes">Soluções</a></li>
+          <li><a href="#depoimentos">Depoimentos</a></li>
+          <li><a href="#blog">Blog</a></li>
+        </ul>
+      </div>
+
+      <!-- Coluna 3: canais de contato -->
+      <div class="footer__col">
+        <h4 class="footer__title">Contato</h4>
+        <ul class="footer__list">
+          <li><a href="mailto:contato@fluxoteca.com">contato@fluxoteca.com</a></li>
+          <li><a href="tel:+5500000000000">+55 (00) 00000-0000</a></li>
+          <li><a href="#" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="#" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+      </div>
+
+      <!-- Coluna 4: Área dedicada de pagamento via QR Code -->
+      <div class="footer__col footer__payment">
+        <h4 class="footer__title">Apoie / Pague via Pix</h4>
+        <div class="payment-box">
+
+          <!-- Container do QR Code, preenchido dinamicamente pelo script.js -->
+          <div class="payment-box__qr" id="pixQrCode" aria-label="QR Code para pagamento via Pix (placeholder)"></div>
+
+          <div class="payment-box__info">
+            <span class="payment-box__label">Chave Pix (e-mail)</span>
+            <div class="payment-box__key-row">
+              <code id="pixKey">pagamentos@fluxoteca.com</code>
+              <button type="button" class="btn-copy" id="copyPixBtn" aria-label="Copiar chave Pix">Copiar</button>
+            </div>
+            <p class="payment-box__note">
+              Escaneie o QR Code acima com o app do seu banco ou copie a chave Pix.
+              Este bloco é um placeholder estilizado — substitua pelo QR Code real gerado
+              para a chave de recebimento do desenvolvedor.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Linha inferior do rodapé -->
+    <div class="container footer__bottom">
+      <p>© <span id="currentYear"></span> fluxoteca. Todos os direitos reservados.</p>
+      <div class="footer__legal">
+        <a href="#">Termos de Uso</a>
+        <a href="#">Política de Privacidade</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script próprio, carregado ao final para não bloquear a renderização -->
+  <script src="script.js"></script>
+</body>
+</html>
