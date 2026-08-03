@@ -347,15 +347,20 @@ h1, h2, h3, h4 {
   bottom: 0;
   left: auto;
   width: 0;
+  /* Sem padding aqui: com width:0, o padding sozinho ainda desenhava uma
+     fresta visível (~48px) na borda direita da tela, deixando o primeiro
+     link do menu ("Início") espiar por trás do menu hamburguer. O padding
+     só é aplicado no estado aberto, abaixo. */
+  padding: 0;
   overflow-x: hidden;
   overflow-y: auto;
   background-color: var(--color-bg);
   transition: width 0.35s ease;
-  padding: var(--space-lg) var(--space-md);
 }
 
 .nav.is-open {
   width: 100%;
+  padding: var(--space-lg) var(--space-md);
 }
 
 .nav__list {
