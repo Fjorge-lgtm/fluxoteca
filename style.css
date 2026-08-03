@@ -447,6 +447,7 @@ h1, h2, h3, h4 {
 
 .hero__inner {
   display: grid;
+  grid-template-columns: 1fr;
   gap: var(--space-xl);
   align-items: center;
 }
@@ -504,10 +505,20 @@ h1, h2, h3, h4 {
 
 .hero__media {
   position: relative;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
 }
 
-/* Moldura da foto real do produto no hero, substitui o antigo placeholder */
+/* Moldura da foto real do produto no hero, substitui o antigo placeholder.
+   width/max-width explícitos: o <img> interno tem width="1600" no HTML (só
+   como dica de proporção pro navegador), e em alguns navegadores mobile isso
+   estava sendo usado no cálculo de tamanho mínimo da grade, forçando esta
+   caixa a ficar mais larga que a tela. Travando a largura aqui, isso não
+   acontece mais, não importa o navegador. */
 .hero__image-frame {
+  width: 100%;
+  max-width: 100%;
   aspect-ratio: 16 / 9;
   min-height: 260px;
   border-radius: var(--radius-md);
@@ -604,6 +615,7 @@ h1, h2, h3, h4 {
 
 .value-prop__inner {
   display: grid;
+  grid-template-columns: 1fr;
   gap: var(--space-xl);
   align-items: center;
 }
@@ -903,6 +915,7 @@ h1, h2, h3, h4 {
 ------------------------------------------------------------ */
 .contact__inner {
   display: grid;
+  grid-template-columns: 1fr;
   gap: var(--space-xl);
   align-items: center;
 }

@@ -33,6 +33,11 @@ function depurarOverflowMobile() {
     const culpados = [];
 
     document.querySelectorAll("body *").forEach((el) => {
+      // Ignora elementos dentro de áreas com rolagem horizontal intencional
+      // (menu mobile fechado e carrossel de telas), que "ultrapassam" a tela
+      // de propósito e não indicam bug nenhum.
+      if (el.closest("#nav, .showcase__track")) return;
+
       const retangulo = el.getBoundingClientRect();
       // Se a borda direita do elemento passa da largura da tela (com 1px de tolerância)
       if (retangulo.right > larguraTela + 1) {
