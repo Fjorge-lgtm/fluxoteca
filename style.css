@@ -761,18 +761,21 @@ h1, h2, h3, h4 {
   border-radius: 999px;
 }
 
-/* Cada print do portfólio dentro do carrossel — usa object-fit: contain
-   (em vez de cover) porque cada projeto tem uma proporção de tela um pouco
-   diferente, e não queremos cortar logotipos ou botões importantes. */
+/* Cada print do portfólio dentro do carrossel. Em vez de forçar uma caixa
+   9:18 fixa (o que sobrava como faixas escuras nas laterais, já que cada
+   projeto tem uma proporção de tela diferente), a altura é fixa e a largura
+   se ajusta automaticamente à proporção real de cada imagem — assim nenhuma
+   fica cortada nem com espaço vazio ao redor. */
 .showcase__screen {
-  flex: 0 0 200px;
-  width: 200px;
-  aspect-ratio: 9 / 18;
+  flex: 0 0 auto;
+  width: auto;
+  height: 340px;
+  max-width: 220px;
   scroll-snap-align: start;
-  background-color: #1c1c1c;
   border: 1.5px solid #3a3a3a;
   border-radius: var(--radius-md);
-  object-fit: contain;
+  object-fit: cover;
+  object-position: top center;
 }
 
 .showcase__arrow {
