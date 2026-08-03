@@ -588,8 +588,17 @@ h1, h2, h3, h4 {
 
 .value-prop__blob {
   position: absolute;
+  /* Sem top/left definidos, o navegador decide a "posição estática" do
+     elemento sozinho — em alguns navegadores mobile isso empurrava esse
+     círculo de 280px para fora da tela e causava rolagem horizontal.
+     Centralizando explicitamente atrás do celular, o tamanho fica previsível
+     em qualquer navegador. */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 280px;
   height: 280px;
+  max-width: 90vw;
   background: var(--color-accent);
   opacity: 0.12;
   border-radius: 50%;
