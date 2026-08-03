@@ -160,6 +160,20 @@ h1, h2, h3, h4 {
 .grid--3 { grid-template-columns: 1fr; }
 .grid--4 { grid-template-columns: 1fr; }
 
+/* Correção de overflow: por padrão, um item de grid/flex nunca encolhe
+   abaixo do tamanho "natural" do seu conteúdo (min-width: auto). Quando
+   esse conteúdo é mais largo que a coluna disponível (como acontecia no
+   hero), o item força a página inteira a ficar mais larga que a tela no
+   mobile. Zerando o min-width nesses containers, o conteúdo interno volta
+   a respeitar a largura real da coluna e quebra linha normalmente. */
+.hero__inner > *,
+.value-prop__inner > *,
+.contact__inner > *,
+.footer__grid > *,
+.grid > * {
+  min-width: 0;
+}
+
 @media (min-width: 640px) {
   .grid--3 { grid-template-columns: repeat(2, 1fr); }
   .grid--4 { grid-template-columns: repeat(2, 1fr); }
@@ -445,6 +459,7 @@ h1, h2, h3, h4 {
 
 .hero__proof {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 0.9rem;
   font-size: 0.9rem;
