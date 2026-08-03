@@ -15,7 +15,64 @@ document.addEventListener("DOMContentLoaded", () => {
   initPixCopy();
   gerarQrCodePlaceholder();
   atualizarAnoRodape();
+  depurarOverflowMobile(); // TEMPORÁRIO: remover depois de encontrar o bug de rolagem horizontal
 });
+
+/* ------------------------------------------------------------
+   9. [TEMPORÁRIO] DIAGNÓSTICO DE ROLAGEM HORIZONTAL
+   Percorre todos os elementos da página e identifica quais
+   ultrapassam a largura da tela. Desenha uma borda vermelha nos
+   culpados e mostra um aviso fixo no topo com a lista deles.
+   Remover esta função e sua chamada acima assim que o bug for resolvido.
+------------------------------------------------------------ */
+function depurarOverflowMobile() {
+  // Só roda depois que a página termina de carregar imagens/fontes,
+  // pra medir os tamanhos finais corretamente.
+  window.addEventListener("load", () => {
+    const larguraTela = document.documentElement.clientWidth;
+    const culpados = [];
+
+    document.querySelectorAll("body *").forEach((el) => {
+      const retangulo = el.getBoundingClientRect();
+      // Se a borda direita do elemento passa da largura da tela (com 1px de tolerância)
+      if (retangulo.right > larguraTela + 1) {
+        const identificador =
+          el.tagName.toLowerCase() +
+          (el.id ? "#" + el.id : "") +
+          (el.className && typeof el.className === "string"
+            ? "." + el.className.trim().replace(/\s+/g, ".")
+            : "");
+
+        culpados.push({
+          identificador,
+          largura: Math.round(retangulo.width),
+          ultrapassaEm: Math.round(retangulo.right - larguraTela),
+        });
+
+        el.style.outline = "3px solid red"; // destaca visualmente o elemento culpado
+      }
+    });
+
+    if (culpados.length > 0) {
+      // Mostra um painel fixo no topo da página com a lista de culpados
+      const painel = document.createElement("div");
+      painel.style.cssText =
+        "position:fixed;top:0;left:0;right:0;z-index:99999;background:#ffeb3b;" +
+        "color:#000;font:12px monospace;padding:8px;max-height:40vh;overflow:auto;";
+      painel.innerHTML =
+        "<strong>DEBUG — largura da tela: " +
+        larguraTela +
+        "px. Elementos ultrapassando (contornados em vermelho):</strong><br>" +
+        culpados
+          .map((c) => c.identificador + " — ultrapassa " + c.ultrapassaEm + "px")
+          .join("<br>");
+      document.body.prepend(painel);
+
+      // Também registra no console, para inspeção via ferramentas de desenvolvedor
+      console.log("Elementos causando overflow horizontal:", culpados);
+    }
+  });
+}
 
 /* ------------------------------------------------------------
    1. MENU MOBILE
